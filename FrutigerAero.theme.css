@@ -1,0 +1,330 @@
+/**
+ * @name BubbleTheme Reforged v3 — Frutiger Aero Edition
+ * @author Lazzz (rewritten) + Copilot (Aero integration)
+ * @description Modern BubbleTheme with Frutiger Aero gloss, neon, bubbles, reflections.
+ * @version 1.1.0
+ */
+
+/* Optional modern base. Comment out if you prefer no import. */
+@import url("https://marda33.github.io/SkeuoCordupdates/SkeuoCordBase.css");
+
+:root {
+  --bubble-accent: #76aad9;
+  --bubble-accent-strong: #a8d7ff;
+  --bubble-accent-deep: #3d4c76;
+  --bubble-glass: rgba(255, 255, 255, 0.08);
+  --bubble-glass-2: rgba(255, 255, 255, 0.12);
+  --bubble-border: rgba(255, 255, 255, 0.10);
+  --bubble-shadow: 0 12px 40px rgba(0, 0, 0, 0.36);
+  --bubble-text: #ffffff;
+  --bubble-muted: rgba(255, 255, 255, 0.72);
+  --bubble-radius: 20px;
+  --bubble-pill: 999px;
+}
+
+/* === GLOBAL BACKGROUND (Aero gradient + soft glow) === */
+[class^="app_"],
+[class^="base_"],
+[class^="layers_"],
+.app-mount,
+.base-2jDfDU,
+.bg-1QIAus,
+.layers-OrUESM {
+  background:
+    radial-gradient(circle at top left, rgba(118, 170, 217, 0.22), transparent 38%),
+    radial-gradient(circle at bottom right, rgba(0, 255, 180, 0.18), transparent 40%),
+    linear-gradient(180deg, rgba(8, 15, 28, 0.92), rgba(4, 8, 16, 0.98)) !important;
+  color: var(--bubble-text) !important;
+}
+
+/* === BASE GLASS BLOCKS === */
+[class^="chatContent_"],
+[class^="sidebar_"],
+[class^="members_"],
+[class^="panels_"],
+[class^="channelTextArea_"],
+[class^="scrollableContainer_"],
+[class^="contentWrapper_"],
+[class^="menu_"],
+[class^="searchResultsWrap_"],
+[class^="userPopoutOuter_"],
+[class^="userProfileOuter_"],
+[class^="modal_"],
+[class^="container_"],
+.container-1NXEtd,
+.chat-2ZfjoI,
+.sidebar-1tnWFu,
+.members-3WRCEx,
+.panels-3wFtMD,
+.channelTextArea-1FufC0,
+.scrollableContainer-15eg7h,
+.contentWrapper-3vHNP2,
+.menu-1QACrS,
+.container-2McqkF,
+.searchResultsWrap-5RVOkx,
+.userPopoutOuter-3AVBmJ,
+.userProfileOuter-1KBYU,
+.root-g14mjS,
+.modal-1KmyE,
+.container-2o3qEW,
+.layer-86YKbF {
+  background: var(--bubble-glass) !important;
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid var(--bubble-border) !important;
+  border-radius: var(--bubble-radius) !important;
+  box-shadow: var(--bubble-shadow) !important;
+}
+
+/* === AERO BUBBLE OVERLAY SYSTEM (Frutiger Aero gloss) === */
+.aeroBubble {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.45), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(118,170,217,0.35), transparent 50%),
+    radial-gradient(circle at 50% 90%, rgba(0,255,180,0.25), transparent 60%),
+    rgba(255,255,255,0.06);
+  backdrop-filter: blur(22px) saturate(160%);
+  -webkit-backdrop-filter: blur(22px) saturate(160%);
+  border-radius: var(--bubble-radius);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.35),
+    inset 0 -2px 6px rgba(0,0,0,0.25),
+    0 12px 40px rgba(0,0,0,0.36);
+}
+
+/* Apply Aero bubbles to major UI blocks */
+.container-1NXEtd,
+.chat-2ZfjoI,
+.sidebar-1tnWFu,
+.members-3WRCEx,
+.panels-3wFtMD,
+.channelTextAreaInner-ITp5kW,
+.contentWrapper-3vHNP2,
+.menu-1QACrS,
+.userPopoutOuter-3AVBmJ,
+.userProfileOuter-1KBYU,
+.modal-1KmyE {
+  composes: aeroBubble;
+}
+
+/* === PANELS / SECTIONS === */
+[class*="panel"],
+[class*="pane"],
+[class*="section"],
+[class*="sidebar"],
+[class*="content"],
+[class*="area"],
+.panel-2A6Sgs,
+.pane-3m1q4D,
+.section-1k8uQf,
+.sidebarInner-1cH6t_,
+.content-2tnIkQ {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+/* === MESSAGES === */
+.message-2CShn3,
+.messageContainer-3VTXBC,
+.messageContainer-3a6gLR,
+.compact-2Nkcau.wrapper-30-Nkg.mentioned-Tre-dv,
+.cozy-VmLDNB.wrapper-30-Nkg.mentioned-Tre-dv,
+.message-G6O-Wv {
+  border-radius: 24px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
+}
+
+.message-2CShn3:hover,
+.messageContainer-3VTXBC:hover,
+.messageContainer-3a6gLR:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* === MENTIONS === */
+.mentioned-Tre-dv,
+.mention-3XBnnZ {
+  background: rgba(118, 170, 217, 0.18) !important;
+  border: 1px solid rgba(168, 215, 255, 0.16) !important;
+  border-radius: 18px !important;
+}
+
+/* === TEXT === */
+.title-338goq,
+.headerText-2XASja,
+.channelName-3APnhp,
+.name-28HaxV,
+.textArea-2CLwUE,
+.placeholder-1mJY1,
+.markup-eYLPri,
+.text-sm-normal-3Zj3Iv,
+.text-md-normal-304U3g,
+.text-xs-normal-3SiVjE,
+.username-1A8OIy {
+  color: var(--bubble-text) !important;
+}
+
+.text-muted,
+.subtitle-3m0cA7,
+.note-3M15gE,
+.footerText-2QLGHU,
+.subText-1CcYgq {
+  color: var(--bubble-muted) !important;
+}
+
+/* === BUTTONS === */
+.lookFilled-yCfaCM,
+.lookOutlined-3yKVGo,
+.button-1kija8,
+.button-f2h6uQ,
+.container-3XgAHv,
+.navButtonActive-1EqC5l,
+.reaction-3vwAF2,
+.jumpButton-1V1FA,
+.jumpButton-1ZwIj {
+  border-radius: var(--bubble-pill) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: var(--bubble-text) !important;
+  background: linear-gradient(180deg, rgba(168, 215, 255, 0.28), rgba(118, 170, 217, 0.16)) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+.lookFilled-yCfaCM:hover,
+.lookOutlined-3yKVGo:hover,
+.button-1kija8:hover,
+.button-f2h6uQ:hover,
+.reaction-3vwAF2:hover,
+.jumpButton-1V1FA:hover,
+.jumpButton-1ZwIj:hover {
+  background: linear-gradient(180deg, rgba(168, 215, 255, 0.38), rgba(118, 170, 217, 0.24)) !important;
+}
+
+/* === INPUTS === */
+.channelTextAreaInner-ITp5kW,
+.scrollableContainer-15eg7h,
+.searchBar-jGtisZ,
+.input-2g-os5,
+.textarea-59yqs,
+.form-3gdLxP,
+.container-2oNtJn,
+.searchBox-31Zv9h {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-radius: var(--bubble-pill) !important;
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+.input-2g-os5:focus,
+.searchBar-jGtisZ:focus-within,
+.channelTextAreaInner-ITp5kW:focus-within,
+.scrollableContainer-15eg7h:focus-within {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(168, 215, 255, 0.30) !important;
+}
+
+/* === POPUPS / MENUS === */
+.menu-1QACrS,
+.container-2McqkF,
+.searchResultsWrap-5RVOkx,
+.emojiPicker-6YCk8a,
+.contentWrapper-3vHNP2,
+.userPopoutOuter-3AVBmJ,
+.userProfileOuter-1KBYU,
+.userProfileOuterThemed-3EfHmv {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.10), transparent 30%),
+    rgba(10, 18, 34, 0.86) !important;
+}
+
+/* === BADGES === */
+.unreadPill-3nEWYM,
+.numberBadge-37OJ3S,
+.iconBadge-3Mmg92 {
+  background: var(--bubble-accent) !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* === REACTIONS === */
+.reaction-3vwAF2 {
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.reaction-3vwAF2.reactionMe-1PwQAc {
+  background: rgba(118, 170, 217, 0.22) !important;
+  border-color: rgba(168, 215, 255, 0.20) !important;
+}
+
+/* === HEADERS === */
+.toolbar-37BrJ5,
+.header-1w9Q93,
+.headerBackground-131uxy,
+.header-3OsQeK,
+.container-ZMc96U.themed-Hp1KC {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* === GUILD ICONS === */
+.wrapper-3kah-n,
+.childWrapper-1j1ub,
+.icon-3AqZ2e,
+.acronym-2zrAHN,
+.guildIcon-2SUGiq,
+.tutorialIcon-25VF3Q {
+  border-radius: 999px !important;
+}
+
+.wrapper-3kah-n:hover .childWrapper-1j1ub,
+.wrapper-3kah-n.selected-1Drb7Z .childWrapper-1j1ub,
+.circleIconButton-1VxDrg.selected-2r1Hvo {
+  background: rgba(118, 170, 217, 0.28) !important;
+  box-shadow: 0 0 0 1px rgba(168, 215, 255, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+}
+
+/* === AVATARS === */
+.avatar-2Vndt,
+.avatarSpeaking-2pCGrZ,
+.avatarSpeaking-33RRJU {
+  border-radius: 999px !important;
+  box-shadow: 0 0 0 2px rgba(168, 215, 255, 0.22) !important;
+}
+
+/* === CODE BLOCKS === */
+.hljs,
+.markup-eYLPri code,
+.inlineCode-2auMQi {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-radius: 14px !important;
+  color: var(--bubble-text) !important;
+}
+
+/* === LINKS === */
+a {
+  color: #a8d7ff !important;
+}
+
+a:hover {
+  color: #d7ecff !important;
+}
+
+/* === DARK THEME FIXES === */
+.theme-dark .message-G6O-Wv,
+.theme-dark .card-2TuZPZ,
+.theme-dark .iconMask-2fMR98,
+.theme-dark .tierBody-3ju-rc,
+.theme-dark .pageWrapper-2PwDoS {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 18px !important;
+}
+
+.container-1NXEtd,
+.chat-2ZfjoI,
+.sidebar-1tnWFu,
+.members-3WRCEx,
+.panels-3wFtMD {
+  overflow: hidden !important;
+}
